@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: mlops-diabetes-api
+    env: python
+    buildCommand: pip install -r requirements.txt && python train.py
+    startCommand: gunicorn app:app
+    plan: free
